@@ -51,7 +51,6 @@ class Game:
     current_state = GameState.MAINMENU
 
     def __init__(self, player=None):
-
         while self.ongoing:
             if self.current_state is GameState.LOST:
 
@@ -128,8 +127,7 @@ class Game:
         match player_choice:
             case "1":
                 print("You carefully enter and discover a chest filled with gold coins!")
-
-                player.coins(random.randint(4, 15))
+                player.coins += random.randint(4, 15)
                 print("Coins : " + str(player.coins))
                 sleep(4)
                 Game.fork_in_the_road(player)
@@ -193,7 +191,7 @@ class Game:
                 print("You negotiate with the bandit and they agree to leave you alone, although it did cost you half your coins...")
 
                 new_coins = player.coins * 0.5
-                print("Coins : " + str(player.coins) + " - " + str(new_coins))
+                print(f"Coins : {player.coins} + {new_coins}")
                 player.coins = new_coins
                 sleep(5)
                 Game.fork_in_the_road(player)
