@@ -43,8 +43,7 @@ def display_end_game_stats(player, win: bool):
     print(f"Damage Multiplier : {player.damage_multiplier}")
     print(f"Total Damage : {round(player.damage * player.damage_multiplier, 2)}")
     print(f"Coins : {player.coins}")
-    sleep(5)
-    Game.current_state = GameState.LOST
+    sleep(8)
 
 
 class Game:
@@ -102,14 +101,14 @@ class Game:
                 print(f"Welcome to your new adventure, {player.name}!")
                 print("Your Statistics : ")
                 print(f"  - Health : {player.health}")
-                print(f"  - Base Damage: {player.damage} | Damage Multiplier: {player.damage_multiplier} | Total Damage: {round(player.damage * player.damage_multiplier, 2)}")
-                print(f"  - Coins: {player.coins}")
-                print("  - Coins : " + str(player.coins))
+                print(f"  - Base Damage : {player.damage} | Damage Multiplier: {player.damage_multiplier} | Total Damage: {round(player.damage * player.damage_multiplier, 2)}")
+                print(f"  - Coins : {player.coins}")
                 print("\n")
                 print("You are an adventurer in a fantasy world. You decide to go on a short trip for fun.")
                 sleep(7)
                 self.current_state = GameState.PLAYING
                 self.exploration_scenario(player)
+
 
     @staticmethod
     def exploration_scenario(player: Player):
